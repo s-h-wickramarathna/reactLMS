@@ -15,7 +15,7 @@ function Login() {
     setPassword(event.target.value);
   };
   const loginProcess = (event) => {
-    window.location = "student";
+    window.location = "./student";
   };
 
   return (
