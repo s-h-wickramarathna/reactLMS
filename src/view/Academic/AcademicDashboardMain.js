@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "../../css/student.css"; // Make sure this path is correct
 import "bootstrap/dist/css/bootstrap.min.css";
 import AcademicDashboard from "./AcademicDashboard";
@@ -78,12 +78,12 @@ const AcedemicDashboardMain = () => {
         <div className={`l-navbar ${isNavVisible ? "show" : ""}`} id="nav-bar">
           <nav className="nav">
             <div>
-              <a href="#" className="nav_logo a">
+              <Link to="#" className="nav_logo a">
                 <i className="bi bi-shop-window nav_logo-icon"></i>
                 <span className="nav_logo-name">
                   ACADEMIC <br /> DIVISION
                 </span>
-              </a>
+              </Link>
               <div className="nav_list">
                 {[
                   "Dashboard",
@@ -108,10 +108,10 @@ const AcedemicDashboardMain = () => {
                 ))}
               </div>
             </div>
-            <a href="#" className="nav_link a">
+            <Link to="#" className="nav_link a">
               <i className="bi bi-box-arrow-left fs-5"></i>
               <span className="nav_name">SignOut</span>
-            </a>
+            </Link>
           </nav>
         </div>
         {/* Routing Academic Pages */}

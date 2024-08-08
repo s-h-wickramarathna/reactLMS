@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../css/student.css"; // Make sure this path is correct
 
 const ClassCard = () => {
@@ -23,9 +24,9 @@ const ClassCard = () => {
             <div className="col-12 text-end fw-bold text-success">
               <p>Held</p>
             </div>
-            <a href="./join-class" class="btn btn-primary w-100 ">
+            <Link to="./join-class" class="btn btn-primary w-100 ">
               Click Here
-            </a>
+            </Link>
           </div>
         </div>
       </div>

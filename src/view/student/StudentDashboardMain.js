@@ -69,12 +69,12 @@ const StudentDashboardMain = () => {
         <div className={`l-navbar ${isNavVisible ? "show" : ""}`} id="nav-bar">
           <nav className="nav">
             <div>
-              <a href="#" className="nav_logo a">
+              <Link to="#" className="nav_logo a">
                 <i className="bi bi-shop-window nav_logo-icon"></i>
                 <span className="nav_logo-name">
                   ACADEMIC <br /> DIVISION
                 </span>
-              </a>
+              </Link>
               <div className="nav_list">
                 {[
                   "Dashboard",
@@ -97,10 +97,10 @@ const StudentDashboardMain = () => {
                 ))}
               </div>
             </div>
-            <a href="#" className="nav_link a">
+            <Link to="#" className="nav_link a">
               <i class="bi bi-box-arrow-left fs-5"></i>
               <span className="nav_name">SignOut</span>
-            </a>
+            </Link>
           </nav>
         </div>
         {/* Routing Student Pages */}
