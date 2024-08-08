@@ -24,7 +24,7 @@ const ClassCard = () => {
             <div className="col-12 text-end fw-bold text-success">
               <p>Held</p>
             </div>
-            <Link to="./join-class" class="btn btn-primary w-100 ">
+            <Link to="/student/join-class" class="btn btn-primary w-100 ">
               Click Here
             </Link>
           </div>
