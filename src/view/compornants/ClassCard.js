@@ -25,7 +25,7 @@ const ClassCard = () => {
               <p>Held</p>
             </div>
             <Link to="/student/join-class" class="btn btn-primary w-100 ">
-              Click Here
+              Join Class
             </Link>
           </div>
         </div>
