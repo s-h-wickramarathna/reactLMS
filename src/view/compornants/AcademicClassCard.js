@@ -24,7 +24,7 @@ const AcademicClassCard = () => {
             <div className="col-12 text-end fw-bold text-success">
               <p>Held</p>
             </div>
-            <Link to="./manage-class/update-class" class="btn btn-primary w-100 ">
+            <Link to="/manage-class/update-class" class="btn btn-primary w-100 ">
               Update Class
             </Link>
           </div>
