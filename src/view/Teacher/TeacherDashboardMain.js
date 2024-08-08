@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "../../css/student.css"; // Make sure this path is correct
 import "bootstrap/dist/css/bootstrap.min.css";
-import AcademicDashboard from "../Academic/AcademicDashboard";
 import ManageClass from "../Academic/ManageClass";
 import AddClass from "../Academic/AddClass";
 import UpdateClass from "../Academic/UpdateClass";

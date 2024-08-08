@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "../../css/student.css"; // Make sure this path is correct
 import "bootstrap/dist/css/bootstrap.min.css";
-import DashboardCard from "../compornants/DashboardCard";
 import StudentJoinClass from "./StudentJoinClass";
 import StudentDashboard from "./StudentDashboard";
 

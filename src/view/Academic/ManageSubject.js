@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import ClassCard from "../compornants/ClassCard";
-import AcademicClassCard from "../compornants/AcademicClassCard";
 
 const ManageSubject = () => {
   return (

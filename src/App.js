@@ -8,7 +8,6 @@ import StudentDashboardMain from "./view/student/StudentDashboardMain";
 import AcedemicDashboardMain from "./view/Academic/AcademicDashboardMain";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import AddClass from "./view/Academic/AddClass";
 import TeacherDashboardMain from "./view/Teacher/TeacherDashboardMain";
 
 function App() {

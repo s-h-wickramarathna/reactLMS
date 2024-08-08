@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "../../css/student.css"; // Make sure this path is correct
 
 const DashboardCard = ({ cardTitle }) => {
