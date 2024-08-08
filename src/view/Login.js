@@ -55,6 +55,7 @@ function Login() {
                 onChange={handlePassword}
               />
               <button onClick={loginProcess}>Sign In</button>
+              <button onClick={loginProcess}>Sign In</button>
             </div>
           </div>
           <div className="toggle-container d-none d-md-block">
