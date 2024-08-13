@@ -107,12 +107,12 @@ const AdminDashboardMain = () => {
         >
           <nav className="nav overflow-y-auto">
             <div>
-              <a href="#" className="nav_logo a">
+              <Link to="#" className="nav_logo a">
                 <i className="bi bi-shop-window nav_logo-icon"></i>
                 <span className="nav_logo-name">
                   ACADEMIC <br /> DIVISION
                 </span>
-              </a>
+              </Link>
               <div className="nav_list">
                 {[
                   "Dashboard",

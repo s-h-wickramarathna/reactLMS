@@ -107,10 +107,10 @@ const StudentDashboardMain = () => {
                 ))}
               </div>
             </div>
-            <a href="#" className="nav_link a">
+            <Link to="#" className="nav_link a">
               <i className="bi bi-box-arrow-left fs-5"></i>
               <span className="nav_name">SignOut</span>
-            </a>
+            </Link>
           </nav>
         </div>
         {/* Routing Student Pages */}
