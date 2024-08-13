@@ -9,6 +9,7 @@ import AcedemicDashboardMain from "./view/Academic/AcademicDashboardMain";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import TeacherDashboardMain from "./view/Teacher/TeacherDashboardMain";
+import AdminDashboardMain from "./view/Admin/AdminDashboardMain";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Route path="/academic" element={<Navigate to="/academic/dashboard"/>} />
         <Route path="/teacher/*" element={<TeacherDashboardMain />} />
         <Route path="/teacher" element={<Navigate to="/teacher/dashboard"/>} />
+        <Route path="/admin/*" element={<AdminDashboardMain/>} />
+        <Route path="/admin" element={<Navigate to="/admin/dashboard"/>} />
       </Routes>
     </Router>
   );

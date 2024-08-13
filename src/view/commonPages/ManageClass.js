@@ -39,7 +39,7 @@ const ManageClass = () => {
                 <div className="m-1">
                   <div className="p-2">
                     <p className="fw-bold fs-5 text-black-50">
-                      Pending Classes
+                      Current Classes
                     </p>
                   </div>
 

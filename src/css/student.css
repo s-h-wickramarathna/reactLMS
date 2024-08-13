@@ -2,7 +2,7 @@
 
 :root {
   --header-height: 3rem;
-  --nav-width: 68px;
+  --nav-width: 75px;
   --first-color: #4723D9;
   --first-color-light: #AFA5D9;
   --white-color: #F7F6FB;
@@ -68,7 +68,7 @@
 .l-navbar {
   position: fixed;
   top: 0;
-  left: -30%;
+  left: -20%;
   width: var(--nav-width);
   height: 100vh;
   background-image: linear-gradient(to top, #5534ba , #1d1d28);
@@ -174,7 +174,7 @@
   }
 
   .showDiv {
-    width: calc(var(--nav-width) + 156px)
+    width: calc(var(--nav-width) + 180px)
   }
 
   .body-pd {
