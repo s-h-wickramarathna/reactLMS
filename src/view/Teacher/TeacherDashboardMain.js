@@ -2,15 +2,19 @@ import { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "../../css/student.css"; // Make sure this path is correct
 import "bootstrap/dist/css/bootstrap.min.css";
-import ManageClass from "../Academic/ManageClass";
-import AddClass from "../Academic/AddClass";
-import UpdateClass from "../Academic/UpdateClass";
-import ManageStudent from "../Academic/ManageStudent";
-import AddStudent from "../Academic/AddStudent";
-import UpdateStudent from "../Academic/UpdateStudent";
-import ManageSubject from "../Academic/ManageSubject";
-import AddSubject from "../Academic/AddSubject";
-import UpdateSubject from "../Academic/UpdateSubject";
+import TimeTable from "../student/TimeTable";
+import SeeAllStudents from "../student/SeeAllStudents";
+import SeeAllSubjects from "./SeeAllSubject";
+import Assignment from "../commonPages/Assignment";
+import ManageAssignment from "../commonPages/ManageAssignment";
+import AddAssignment from "../commonPages/AddAssignment";
+import UpdateAssignment from "../commonPages/UpdateAssignment";
+import Exams from "../commonPages/Exam";
+import ManageExams from "../commonPages/ManageExams";
+import AddExam from "../commonPages/AddExam";
+import UpdateExam from "../commonPages/updateExam";
+import AddClass from "../commonPages/AddClass";
+import UpdateClass from "../commonPages/UpdateClass";
 import TeacherDashboard from "./TeacherDashboard";
 
 const TeacherDashboardMain = () => {
@@ -27,12 +31,12 @@ const TeacherDashboardMain = () => {
 
   const iconMapping = {
     "Dashboard": "bi bi-app-indicator",
-    "Manage Class": "bi bi-calendar2",
-    "Manage Student": "bi bi-clipboard-check",
-    "Manage Subject": "bi bi-clipboard-check",
-    "Manage Payments": "bi bi-credit-card",
+    "Time Table": "bi bi-calendar2",
+    "Students": "bi bi-clipboard-check",
+    "Subjects": "bi bi-clipboard-check",
     "Manage Assignments": "bi bi-file-earmark-text",
     "Manage Exams": "bi bi-pencil-square",
+    "Payments": "bi bi-credit-card",
   };
 
   useEffect(() => {
@@ -75,24 +79,24 @@ const TeacherDashboardMain = () => {
             </div>
           </div>
         </header>
-        <div className={`l-navbar ${isNavVisible ? "show" : ""}`} id="nav-bar">
+        <div className={`l-navbar ${isNavVisible ? "showDiv" : ""}`} id="nav-bar">
           <nav className="nav">
-            <div>
-              <Link to="#" className="nav_logo a">
+            <div className="overflow-x-auto">
+              <a href="#" className="nav_logo a">
                 <i className="bi bi-shop-window nav_logo-icon"></i>
                 <span className="nav_logo-name">
                   ACADEMIC <br /> DIVISION
                 </span>
-              </Link>
-              <div className="nav_list">
+              </a>
+              <div className="nav_list overflow-auto">
                 {[
                   "Dashboard",
-                  "Manage Class",
-                  "Manage Student",
-                  "Manage Subject",
-                  "Manage Payments",
+                  "Time Table",
+                  "Students",
+                  "Subjects",
                   "Manage Assignments",
                   "Manage Exams",
+                  "Payments",
                 ].map((name) => (
                   <Link
                     to={name.toLowerCase().replace(" ", "-")}
@@ -108,23 +112,26 @@ const TeacherDashboardMain = () => {
                 ))}
               </div>
             </div>
-            <Link to="#" className="nav_link a">
+            <a href="#" className="nav_link a">
               <i className="bi bi-box-arrow-left fs-5"></i>
               <span className="nav_name">SignOut</span>
-            </Link>
+            </a>
           </nav>
         </div>
         {/* Routing Academic Pages */}
         <Routes>
           <Route path="dashboard" element={<TeacherDashboard />} />
-          <Route path="manage-class" element={<ManageClass />} />
-          <Route path="manage-student" element={<ManageStudent />} />
-          <Route path="manage-student/add-student" element={<AddStudent />} />
-          <Route path="manage-student/update-student" element={<UpdateStudent />} />
-          <Route path="manage-subject" element={<ManageSubject />} />
-          <Route path="manage-subject/add-subject" element={<AddSubject />} />
-          <Route path="manage-subject/update-subject" element={<UpdateSubject />} />
-          <Route path="manage-exams" element={<ManageClass />} />
+          <Route path="time-table" element={<TimeTable />} />
+          <Route path="students" element={<SeeAllStudents />} />
+          <Route path="subjects" element={<SeeAllSubjects />} />
+          <Route path="manage-Assignments" element={<Assignment />} />
+          <Route path="manage-Assignments/manage" element={<ManageAssignment />} />
+          <Route path="manage-Assignments/manage/add" element={<AddAssignment />} />
+          <Route path="manage-Assignments/manage/update" element={<UpdateAssignment />} />
+          <Route path="manage-exams" element={<Exams />} />
+          <Route path="manage-exams/manage" element={<ManageExams />} />
+          <Route path="manage-exams/manage/add" element={<AddExam />} />
+          <Route path="manage-exams/manage/update" element={<UpdateExam />} />
           <Route path="manage-class/add-class" element={<AddClass />} />
           <Route path="manage-class/update-class" element={<UpdateClass />} />
         </Routes>

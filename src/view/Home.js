@@ -1,4 +1,3 @@
-import logo from "../logo.svg";
 import "../css/App.css";
 import { useEffect, useState } from "react";
 import axios from "axios";

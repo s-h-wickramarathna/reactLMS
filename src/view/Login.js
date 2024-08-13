@@ -15,7 +15,7 @@ function Login() {
     setPassword(event.target.value);
   };
   const loginProcess = (event) => {
-    window.location = "/student";
+    window.location = "student";
   };
 
   return (
@@ -54,7 +54,6 @@ function Login() {
                 value={password}
                 onChange={handlePassword}
               />
-              <button onClick={loginProcess}>Sign In</button>
               <button onClick={loginProcess}>Sign In</button>
             </div>
           </div>

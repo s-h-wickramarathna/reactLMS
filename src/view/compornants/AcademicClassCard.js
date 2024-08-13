@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "../../css/student.css"; // Make sure this path is correct
 
 const AcademicClassCard = () => {
@@ -10,23 +9,23 @@ const AcademicClassCard = () => {
         </div>
         <div className="card my-2 border border-0">
           <div className="card-body">
-            {/* <h5 className="card-title fs-6 fw-bold"><i class="bi bi-globe"></i>&nbsp;&nbsp;OOPC</h5> */}
+            {/* <h5 className="card-title fs-6 fw-bold"><i className="bi bi-globe"></i>&nbsp;&nbsp;OOPC</h5> */}
             <p className="card-text fw-bold">
-              <i class="bi bi-journal-text fs-6 fw-bold"></i>
+              <i className="bi bi-journal-text fs-6 fw-bold"></i>
               &nbsp;&nbsp;OOPC <br />
-              <i class="bi bi-stopwatch fs-6 fw-bold"></i>&nbsp;&nbsp;8:00 AM to
+              <i className="bi bi-stopwatch fs-6 fw-bold"></i>&nbsp;&nbsp;8:00 AM to
               10:00 AM <br />
-              <i class="bi bi-person-add fs-6 fw-bold"></i>
+              <i className="bi bi-person-add fs-6 fw-bold"></i>
               &nbsp;&nbsp;Sanchitha Heshan <br />
-              <i class="bi bi-geo-alt-fill fs-6 fw-bold"></i>
+              <i className="bi bi-geo-alt-fill fs-6 fw-bold"></i>
               &nbsp;&nbsp;Head Office Online <br />
             </p>
             <div className="col-12 text-end fw-bold text-success">
               <p>Held</p>
             </div>
-            <Link to="/academic/manage-class/update-class" class="btn btn-primary w-100 ">
+            <a href="./manage-class/update-class" className="btn btn-primary w-100 ">
               Update Class
-            </Link>
+            </a>
           </div>
         </div>
       </div>
