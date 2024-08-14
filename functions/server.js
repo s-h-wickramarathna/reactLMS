@@ -4,6 +4,7 @@ const serverless = require("serverless-http");
 const app = express();
 const router = express.Router();
 const Product = require("./models/productModel");
+
 router.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Express!" });
 });
