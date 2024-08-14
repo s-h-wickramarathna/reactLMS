@@ -8,6 +8,11 @@ const path = require("path");
 const Product = require("../models/productModel");
 const Student = require("../models/StudentModel");
 
+app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 router.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Express!" });
 });
@@ -59,8 +64,4 @@ mongoose
     console.log(err);
   });
 
-app.use("/.netlify/functions/server", router); // path must route to lambda
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 module.exports.handler = serverless(app);
