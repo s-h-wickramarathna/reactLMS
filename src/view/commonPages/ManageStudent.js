@@ -1,6 +1,23 @@
+import axios from "axios";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ManageStudent = () => {
+  const AllStudents = () => {
+    axios
+      .get("https://reactlms.netlify.app/.netlify/functions/server/students")
+      .then((response) => {
+        console.log(response.data);
+        // setStudents(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  };
+
+  useEffect(() => {
+    AllStudents();
+  }, []);
   return (
     <>
       <div className="col-12 bg-light">
