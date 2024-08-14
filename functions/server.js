@@ -4,6 +4,8 @@ const serverless = require("serverless-http");
 const Product = require("../models/productModel");
 const app = express();
 const router = express.Router();
+const cors = require('cors'); // Import the CORS middleware
+const path = require('path');
 
 router.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Express!" });
@@ -36,4 +38,7 @@ mongoose
   });
 
 app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 module.exports.handler = serverless(app);
