@@ -3,13 +3,15 @@ const mongoose = require("mongoose");
 const serverless = require("serverless-http");
 const app = express();
 const router = express.Router();
-const cors = require("cors"); // Import the CORS middleware
+const cors = require("cors") // Import the CORS middleware
 const path = require("path");
 const Product = require("../models/productModel");
 const Student = require("../models/StudentModel");
 
+app.use(cors({
+    origin: 'https://rainbow-blini-fe5194.netlify.app'  // Replace with your frontend origin
+  }));
 app.use("/.netlify/functions/server", router); // path must route to lambda
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
