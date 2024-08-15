@@ -8,9 +8,22 @@ const path = require("path");
 const Product = require("../models/productModel");
 const Student = require("../models/StudentModel");
 
+const allowedOrigins = [
+  'https://rainbow-blini-fe5194.netlify.app',
+  'http://localhost:3000'
+];
+
 app.use(cors({
-    origin: 'https://rainbow-blini-fe5194.netlify.app'  // Replace with your frontend origin
-  }));
+  origin: function (origin, callback) {
+    // Check if the origin is in the allowedOrigins array or if there's no origin (for server-to-server requests)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use("/.netlify/functions/server", router); // path must route to lambda
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
