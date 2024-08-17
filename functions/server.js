@@ -102,7 +102,7 @@ router.post("/superadmin/login", async (req, res) => {
     });
 
     if (superAdmin.length > 0) {
-      req.session.superAdminId = superAdminId;
+      req.session.userId = superAdminId;
       res.status(200).json(superAdmin);
     } else {
       res.status(404).json({ message: "Super Admin not found" });
@@ -113,9 +113,9 @@ router.post("/superadmin/login", async (req, res) => {
   }
 });
 
-router.get('/profile', (req, res) => {
-  if (req.session.superAdminId) {
-    res.send(`Welcome, user ${req.session.superAdminId}`);
+router.get('/getSession', (req, res) => {
+  if (req.session.userId) {
+    res.send(req.session.userId);
   } else {
     res.status(401).send('Please log in');
   }
