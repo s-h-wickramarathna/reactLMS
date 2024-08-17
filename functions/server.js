@@ -29,7 +29,7 @@ app.use(cors({
 
 app.use("/.netlify/functions/server", router); // path must route to lambda
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 router.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Express!" });
