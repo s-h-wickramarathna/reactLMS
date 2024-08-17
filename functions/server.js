@@ -70,7 +70,7 @@ router.get("/students", async (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://Heshan655:6uVyUM7q9nIBO2OC@devetaminapi.62egjtv.mongodb.net/Node-API?retryWrites=true&w=majority&appName=DevetaminAPI"
+    "mongodb+srv://Heshan655:dpva3vAsfD71ZlCh@devetaminapi.62egjtv.mongodb.net/Node-API?retryWrites=true&w=majority&appName=DevetaminAPI"
   )
   .then(() => {
     console.log("connected to MongoDB");
