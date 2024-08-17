@@ -3,14 +3,14 @@ const mongoose = require("mongoose");
 const serverless = require("serverless-http");
 const app = express();
 const router = express.Router();
-const cors = require("cors") // Import the CORS middleware
-const path = require("path");
+const cors = require("cors"); // Import the CORS middleware
 
 // Models
 const Product = require("../models/productModel");
 const Student = require("../models/StudentModel");
 const SuperAdmin = require("../models/SuderAdminModel");
 
+// CORS Configuration
 const allowedOrigins = [
   'https://rainbow-blini-fe5194.netlify.app',
   'http://localhost:3000'
@@ -18,7 +18,7 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Check if the origin is in the allowedOrigins array or if there's no origin (for server-to-server requests)
+    // Allow requests from allowed origins or server-to-server requests
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -27,10 +27,11 @@ app.use(cors({
   }
 }));
 
-app.use("/.netlify/functions/server", router); // path must route to lambda
+// Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Routes
 router.get("/api/hello", (req, res) => {
   res.json({ message: "Hello from Express!" });
 });
@@ -44,7 +45,7 @@ router.get("/product", async (req, res) => {
     const product = await Product.find({});
     res.status(200).json(product);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     res.status(500).json({ message: error.message });
   }
 });
@@ -55,7 +56,7 @@ router.post("/student", async (req, res) => {
     const student = await Student.create(req.body);
     res.status(200).json(student);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     res.status(500).json({ message: error.message });
   }
 });
@@ -63,13 +64,14 @@ router.post("/student", async (req, res) => {
 // Create New Super Admin
 router.post("/superadmin", async (req, res) => {
   try {
-    
-    const { superAdminId, superAdminPassword, superAdminName }  = req.body;
-    res.status(200).json({superAdminId,superAdminPassword,superAdminName});
+    const { superAdminId, superAdminPassword, superAdminName } = req.body;
+    // You can either return the response directly or save it to the database as needed
+    res.status(200).json({ superAdminId, superAdminPassword, superAdminName });
+    // If you want to save to the database, uncomment the following lines:
     // const superAdmin = await SuperAdmin.create(req.body);
     // res.status(200).json(superAdmin);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     res.status(500).json({ message: error.message });
   }
 });
@@ -77,23 +79,27 @@ router.post("/superadmin", async (req, res) => {
 // Fetch All Students
 router.get("/students", async (req, res) => {
   try {
-    const student = await Student.find({});
-    res.status(200).json(student);
+    const students = await Student.find({});
+    res.status(200).json(students);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
     res.status(500).json({ message: error.message });
   }
 });
 
+// Connect to MongoDB
 mongoose
   .connect(
     "mongodb+srv://Heshan655:dpva3vAsfD71ZlCh@devetaminapi.62egjtv.mongodb.net/Node-API?retryWrites=true&w=majority&appName=DevetaminAPI"
   )
   .then(() => {
-    console.log("connected to MongoDB");
+    console.log("Connected to MongoDB");
   })
   .catch((err) => {
-    console.log(err);
+    console.error(err);
   });
+
+// Set up serverless function
+app.use("/.netlify/functions/server", router);
 
 module.exports.handler = serverless(app);
