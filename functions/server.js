@@ -30,9 +30,11 @@ app.use(cors({
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// Set up serverless function
+app.use("/.netlify/functions/server", router);
 
 // Routes
-router.get("/api/hello", (req, res) => {
+router.get("/api/hi", (req, res) => {
   res.json({ message: "Hello from Express!" });
 });
 
@@ -98,8 +100,5 @@ mongoose
   .catch((err) => {
     console.error(err);
   });
-
-// Set up serverless function
-app.use("/.netlify/functions/server", router);
 
 module.exports.handler = serverless(app);
