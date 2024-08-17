@@ -14,7 +14,7 @@ const SuperAdmin = require("../models/SuderAdminModel");
 // CORS Configuration
 const allowedOrigins = [
   "https://rainbow-blini-fe5194.netlify.app",
-  "http://localhost:3000/",
+  "http://localhost:3000",
 ];
 
 // cors
