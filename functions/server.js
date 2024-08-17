@@ -84,7 +84,7 @@ router.post("/superadmin/login", async (req, res) => {
       superAdminPassword: superAdminPassword,
     });
 
-    if (superAdmin) {
+    if (superAdmin.length > 0) {
       res.status(200).json(superAdmin);
     } else {
       res.status(404).json({ message: "Super Admin not found" });
