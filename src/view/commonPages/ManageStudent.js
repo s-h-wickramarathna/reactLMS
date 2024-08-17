@@ -1,30 +1,13 @@
-import axios from "axios";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ManageStudent = () => {
-  const AllStudents = () => {
-    axios
-      .get("https://reactlms.netlify.app/.netlify/functions/server/students")
-      .then((response) => {
-        console.log(response.data);
-        // setStudents(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  };
-
-  useEffect(() => {
-    AllStudents();
-  }, []);
   return (
     <>
       <div className="col-12 bg-light">
         <div className="row">
           <h2 className="fw-bold mt-5">Manage Students</h2>
           <div className="col-12 col-lg-4 offset-0 offset-lg-8 d-flex gap-2 mt-4">
-            <select class="form-select" aria-label="Default select example">
+            <select className="form-select" aria-label="Default select example">
               <option selected>Select Course</option>
               <option value="1">One</option>
               <option value="2">Two</option>

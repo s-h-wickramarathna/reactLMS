@@ -33,6 +33,7 @@ import UpdateAcademic from "../commonPages/UpdateAcademic";
 const AdminDashboardMain = () => {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [activeLink, setActiveLink] = useState("Dashboard");
+  const [selectedOption, setSelectedOption] = useState("defaultOption");
 
   const handleNavToggle = () => {
     setIsNavVisible(!isNavVisible);
@@ -50,9 +51,10 @@ const AdminDashboardMain = () => {
     "Manage Student": "bi bi-clipboard-check",
     "Manage Teacher": "bi bi-clipboard-check",
     "Manage Subject": "bi bi-clipboard-check",
-    "Manage Payments": "bi bi-credit-card",
     "Manage Assignments": "bi bi-file-earmark-text",
     "Manage Exams": "bi bi-pencil-square",
+    "Manage Payments": "bi bi-credit-card",
+    "Reports": "bi bi-credit-card",
   };
 
   useEffect(() => {
@@ -64,6 +66,10 @@ const AdminDashboardMain = () => {
       // Cleanup code if necessary
     };
   }, [isNavVisible]); // Dependencies, if any
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   return (
     <>
@@ -83,22 +89,21 @@ const AdminDashboardMain = () => {
               id="header-toggle"
             ></i>
           </div>
-
-          <div className="d-flex">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Select To Manage Institute</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
+          <div className="">
+            <div className="ps-3 d-flex align-items-center">
+              <span className="nav_logo-name text-light">Hi, Sanchitha Heshan</span>
+            </div>
           </div>
           <div className="d-flex">
-            <div>
-              <i className="bi bi-person-circle fs-2 text-white"></i>
-            </div>
-            <div className="ps-3 d-flex align-items-center">
-              <span className="nav_logo-name text-light">Admin ID: 22305</span>
-            </div>
+            <select
+              value={selectedOption}
+              onChange={handleChange}
+              className="form-select"
+            >
+              <option value="defaultOption">Select Institute To Manage</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
           </div>
         </header>
         <div
@@ -113,6 +118,10 @@ const AdminDashboardMain = () => {
                   ACADEMIC <br /> DIVISION
                 </span>
               </Link>
+              <Link to="#" className="nav_logo a">
+                <i className="bi bi-person-circle  nav_logo-icon"></i>
+                <span className="nav_logo-name">Admin ID:<br/> 22305</span>
+              </Link>
               <div className="nav_list">
                 {[
                   "Dashboard",
@@ -122,9 +131,10 @@ const AdminDashboardMain = () => {
                   "Manage Student",
                   "Manage Teacher",
                   "Manage Subject",
-                  "Manage Payments",
                   "Manage Assignments",
                   "Manage Exams",
+                  "Manage Payments",
+                  "Reports",
                 ].map((name) => (
                   <Link
                     to={name.toLowerCase().replace(" ", "-")}
@@ -188,8 +198,14 @@ const AdminDashboardMain = () => {
           <Route path="manage-admin/add-admin" element={<AddAdmin />} />
           <Route path="manage-admin/update-admin" element={<UpdateAdmin />} />
           <Route path="manage-academic" element={<ManageAcademic />} />
-          <Route path="manage-academic/add-academic" element={<AddAcademic />} />
-          <Route path="manage-academic/update-academic" element={<UpdateAcademic />} />
+          <Route
+            path="manage-academic/add-academic"
+            element={<AddAcademic />}
+          />
+          <Route
+            path="manage-academic/update-academic"
+            element={<UpdateAcademic />}
+          />
         </Routes>
         {/* Routing Academic Pages */}
       </section>

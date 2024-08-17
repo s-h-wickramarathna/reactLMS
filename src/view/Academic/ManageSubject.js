@@ -20,7 +20,7 @@ const ManageSubject = () => {
               <option value="Los Angeles" />
               <option value="Chicago" />
             </datalist>
-            <Link to="add-subject" type="button" class="btn btn-primary">
+            <Link to="add-subject" type="button" className="btn btn-primary">
               Add New Subject
             </Link>
           </div>
@@ -33,7 +33,7 @@ const ManageSubject = () => {
                     <p className="fw-bold fs-5 text-black-50">All Subjects</p>
                   </div>
 
-                  <table class="table">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -55,7 +55,7 @@ const ManageSubject = () => {
                           <Link
                             to="update-subject"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>
@@ -71,7 +71,7 @@ const ManageSubject = () => {
                           <Link
                             to="update-subject"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>
@@ -87,7 +87,7 @@ const ManageSubject = () => {
                           <Link
                             to="update-subject"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>

@@ -26,7 +26,7 @@ const ExamSubjectCollaps = () => {
                   <p className="fw-bold text-success">Current Exams</p>
                 </div>
                 <div className="table-responsive">
-                  <table class="table">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -81,7 +81,7 @@ const ExamSubjectCollaps = () => {
                   <p className="fw-bold text-success">All Exams</p>
                 </div>
                 <div className="table-responsive">
-                  <table class="table">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th scope="col">#</th>

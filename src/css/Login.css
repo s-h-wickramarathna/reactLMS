@@ -127,6 +127,18 @@ body{
     animation-duration: 11s;
 }
 
+.half-width-md {
+    width: 100%; /* Default width on smaller screens */
+
+    /* On medium screens and above (min-width: 768px), set width to 50% */
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+}
+
+.loginCardColor{
+    background-color: #4e54c8;
+}
 
 
 @keyframes animate {
@@ -155,10 +167,6 @@ body{
 
 
 .container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     background-color: #ffffff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
@@ -231,8 +239,6 @@ body{
     position: absolute;
     top: 0;
     height: 100%;
-    width: 100%;
-    max-width: 400px;
     transition: all 0.6s ease-in-out;
 }
 

@@ -20,7 +20,7 @@ const ManageClass = () => {
               <option value="Los Angeles" />
               <option value="Chicago" />
             </datalist>
-            <Link to="add-class" type="button" class="btn btn-primary">
+            <Link to="add-class" type="button" className="btn btn-primary">
               Add New Class
             </Link>
           </div>
@@ -33,7 +33,7 @@ const ManageClass = () => {
                     <p className="fw-bold fs-5 text-black-50">Pending Classes</p>
                   </div>
 
-                  <table class="table">
+                  <table className="table">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -63,7 +63,7 @@ const ManageClass = () => {
                           <Link
                             to="update-class"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>
@@ -83,7 +83,7 @@ const ManageClass = () => {
                           <Link
                             to="update-class"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>
@@ -103,7 +103,7 @@ const ManageClass = () => {
                           <Link
                             to="update-class"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>
@@ -123,7 +123,7 @@ const ManageClass = () => {
                           <Link
                             to="update-class"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>
@@ -143,7 +143,7 @@ const ManageClass = () => {
                           <Link
                             to="update-class"
                             type="button"
-                            class="btn btn-dark"
+                            className="btn btn-dark"
                           >
                             Update
                           </Link>

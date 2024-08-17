@@ -7,7 +7,7 @@ const Exams = () => {
         <div className="row">
           <h2 className="fw-bold mt-5">Manage Exams</h2>
           <div className="col-12 col-lg-4 offset-0 offset-lg-8 d-flex gap-2 mt-4">
-            <select class="form-select" aria-label="Default select example">
+            <select className="form-select" aria-label="Default select example">
               <option selected>Select Course</option>
               <option value="1">One</option>
               <option value="2">Two</option>

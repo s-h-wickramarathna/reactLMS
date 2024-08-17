@@ -2,7 +2,7 @@
 
 :root {
   --header-height: 3rem;
-  --nav-width: 75px;
+  --nav-width: 70px;
   --first-color: #4723D9;
   --first-color-light: #AFA5D9;
   --white-color: #F7F6FB;
@@ -68,7 +68,7 @@
 .l-navbar {
   position: fixed;
   top: 0;
-  left: -20%;
+  left: -25%;
   width: var(--nav-width);
   height: 100vh;
   background-image: linear-gradient(to top, #5534ba , #1d1d28);
@@ -95,7 +95,7 @@
 }
 
 .nav_logo {
-  margin-bottom: 2rem
+  margin-bottom: 1rem
 }
 
 .nav_logo-icon {
@@ -210,3 +210,46 @@
   z-index: -1;
 }
 
+.userImg{
+  font-size: 100px;
+}
+
+.CourseAndPaymentCardHight{
+min-height: 450px;
+max-height: 450px;
+}
+
+.CourseAndPaymentCardTableHight{
+max-height: 165px;
+}
+
+.mondayCardColour{
+  background-color: #B4D6CD;
+}
+
+.tuesdayCardColour{
+  background-color: #DAD4B5;
+}
+.wednesdayCardColour{
+  background-color: #C8A1E0;
+}
+.thursdayCardColour{
+  background-color: #86AB89;
+}
+.fridayCardColour{
+  background-color: #8799b3;
+}
+.saturdayCardColour{
+  background-color: #BEC6A0;
+}
+.sundayCardColour{
+  background-color: #f4e5d1;
+}
+
+.cursor-hand{
+  cursor: pointer;
+}
+
+.mainDayDivColour{
+  background-color: #edebe8;
+}

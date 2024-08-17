@@ -17,14 +17,23 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
+
+        {/* Student */}
         <Route path="/student/*" element={<StudentDashboardMain />} />
         <Route path="/student" element={<Navigate to="/student/dashboard" />} />
+
+         {/* Accademic */}
         <Route path="/academic/*" element={<AcedemicDashboardMain />} />
         <Route path="/academic" element={<Navigate to="/academic/dashboard"/>} />
+
+        {/* Teacher */}
         <Route path="/teacher/*" element={<TeacherDashboardMain />} />
         <Route path="/teacher" element={<Navigate to="/teacher/dashboard"/>} />
+
+         {/* Admin */}
         <Route path="/admin/*" element={<AdminDashboardMain/>} />
         <Route path="/admin" element={<Navigate to="/admin/dashboard"/>} />
+
       </Routes>
     </Router>
   );

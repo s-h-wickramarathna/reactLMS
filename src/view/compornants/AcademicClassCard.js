@@ -4,7 +4,7 @@ import "../../css/student.css"; // Make sure this path is correct
 const AcademicClassCard = () => {
   return (
     <>
-      <div className="col-12 col-xl-3 shadow rounded border border-4 border-end-0 border-start-0 border-primary">
+      <div className="col-11 col-xl-3 shadow rounded border border-4 border-end-0 border-start-0 border-primary">
         <div className="bg-success mt-4 w-50 p-2 rounded-end-2 shadow-sm text-white fw-semibold">
           2003/12/25
         </div>

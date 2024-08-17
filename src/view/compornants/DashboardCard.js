@@ -6,8 +6,8 @@ const DashboardCard = ({ cardTitle }) => {
     <>
       {/* Container Main start */}
       {/* Card Container */}
-      <div className="pt-4 bg-light">
-        <div className="w-100 d-flex flex-column flex-md-row justify-content-center">
+      <div className="pt-2 bg-light">
+        <div className="w-100 d-flex flex-column flex-lg-row justify-content-center">
           {/* card */}
           <div className="card m-2 card-color1 text-white border-0 shadow-lg flex-grow-1">
             <div className="card-body p-3">

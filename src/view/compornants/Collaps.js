@@ -5,7 +5,7 @@ const Collaps = ({ children }) => {
       <div className="col-12">
         <div className="row">
           {/* Main Collaps */}
-          <div className="col-12 border border-2 p-2 mt-2">
+          <div className="col-12 mt-2">
             <p className="">
               <button
                 className="btn btn-secondary w-100 text-start mt-3"

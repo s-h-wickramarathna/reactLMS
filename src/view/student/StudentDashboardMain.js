@@ -24,12 +24,12 @@ const StudentDashboardMain = () => {
   };
 
   const iconMapping = {
-    "Dashboard": "bi bi-app-indicator",
+    Dashboard: "bi bi-app-indicator",
     "My Timetable": "bi bi-calendar2",
-    "Attendance": "bi bi-clipboard-check",
-    "Assignments": "bi bi-file-earmark-text",
-    "Exams": "bi bi-pencil-square",
-    "Payments": "bi bi-credit-card",
+    Attendance: "bi bi-clipboard-check",
+    Assignments: "bi bi-file-earmark-text",
+    Exams: "bi bi-pencil-square",
+    Payments: "bi bi-credit-card",
   };
 
   useEffect(() => {
@@ -46,10 +46,10 @@ const StudentDashboardMain = () => {
     <>
       <section
         id="body-pd"
-        className={`body ${isNavVisible ? "body-pd" : ""} bg-light mb-5`}
+        className={`body ${isNavVisible ? "" : "body-pd"} overflow-hidden mb-5`}
       >
         <header
-          className={`header ${isNavVisible ? "body-pd" : ""}`}
+          className={`header ${isNavVisible ? "" : "body-pd"} bg-primary`}
           id="header"
         >
           <div className="header_toggle" onClick={handleNavToggle}>
@@ -59,23 +59,22 @@ const StudentDashboardMain = () => {
               }`}
               id="header-toggle"
             ></i>
-            <span className="nav_logo-name text-light ms-3 fs-5">
-                Hi, Sanchitha
-              </span>
           </div>
-
           <div className="d-flex">
             <div>
               <i className="bi bi-person-circle fs-2 text-white"></i>
             </div>
             <div className="ps-3 d-flex align-items-center">
-              <span className="nav_logo-name text-light">
-                Student ID: 22305
+              <span className="nav_logo-name text-light fs-6">
+                Student ID: <span>NCR-2175</span>
               </span>
             </div>
           </div>
         </header>
-        <div className={`l-navbar ${isNavVisible ? "showDiv" : ""}`} id="nav-bar">
+        <div
+          className={`l-navbar ${isNavVisible ? "" : "showDiv"}`}
+          id="nav-bar"
+        >
           <nav className="nav">
             <div>
               <Link href="/" className="nav_logo a">
@@ -115,14 +114,14 @@ const StudentDashboardMain = () => {
         </div>
         {/* Routing Student Pages */}
         <Routes>
-          <Route path="dashboard" element={<StudentDashboard/>} />
+          <Route path="dashboard" element={<StudentDashboard />} />
           <Route path="join-class" element={<StudentJoinClass />} />
           <Route path="my-timetable" element={<TimeTable />} />
           <Route path="attendance" element={<SeeAllAttendance />} />
           <Route path="assignments" element={<SeeAllAssignment />} />
-          <Route path="assignments/see" element={<UploadAssignments  />} />
+          <Route path="assignments/see" element={<UploadAssignments />} />
           <Route path="exams" element={<SeeAllExams />} />
-          <Route path="exams/see" element={<UploadExams  />} />
+          <Route path="exams/see" element={<UploadExams />} />
         </Routes>
         {/* Routing Student Pages */}
       </section>
