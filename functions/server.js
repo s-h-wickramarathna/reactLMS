@@ -64,9 +64,9 @@ router.post("/student", async (req, res) => {
 router.post("/superadmin", async (req, res) => {
   try {
     const superAdmin = await SuperAdmin.create({
-      super_admin_name: "Super Admin",
-      super_admin_password: "superadmin",
-      super_admin_id: "123456"
+      super_admin_name: req.body.super_admin_name,
+      super_admin_password: req.body.super_admin_password,
+      super_admin_id: req.body.super_admin_id
     });
     res.status(200).json(superAdmin);
   } catch (error) {
