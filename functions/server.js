@@ -4,6 +4,7 @@ const serverless = require("serverless-http");
 const app = express();
 const router = express.Router();
 const cors = require("cors"); // Import the CORS middleware
+const session = require("express-session");
 
 // Models
 const Product = require("../models/productModel");
@@ -12,20 +13,36 @@ const SuperAdmin = require("../models/SuderAdminModel");
 
 // CORS Configuration
 const allowedOrigins = [
-  'https://rainbow-blini-fe5194.netlify.app',
-  'http://localhost:3000'
+  "https://rainbow-blini-fe5194.netlify.app",
+  "http://localhost:3000",
 ];
 
-app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests from allowed origins or server-to-server requests
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+// cors
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests from allowed origins or server-to-server requests
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
+
+// session config
+app.use(
+  session({
+    secret: "LMS", // Replace with a strong, random secret
+    resave: false, // Don't save the session if it wasn't modified
+    saveUninitialized: true, // Save a new, uninitialized session
+    cookie: {
+      secure: false, // Set to true if using HTTPS
+      maxAge: 60000, // Session expiration time in milliseconds (1 minute)
+    },
+  })
+);
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
@@ -85,6 +102,7 @@ router.post("/superadmin/login", async (req, res) => {
     });
 
     if (superAdmin.length > 0) {
+      req.session.superAdminId = superAdminId;
       res.status(200).json(superAdmin);
     } else {
       res.status(404).json({ message: "Super Admin not found" });
