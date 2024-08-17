@@ -75,6 +75,26 @@ router.post("/superadmin", async (req, res) => {
   }
 });
 
+router.post("/superadmin/login", async (req, res) => {
+  try {
+    const { superAdminId, superAdminPassword } = req.body;
+
+    const superAdmin = await SuperAdmin.find({
+      superAdminId: superAdminId,
+      superAdminPassword: superAdminPassword,
+    });
+
+    if (superAdmin) {
+      res.status(200).json(superAdmin);
+    } else {
+      res.status(404).json({ message: "Super Admin not found" });
+    }
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ message: error.message });
+  }
+});
+
 // Fetch All Students
 router.get("/students", async (req, res) => {
   try {
