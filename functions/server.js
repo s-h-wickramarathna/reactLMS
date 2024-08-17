@@ -60,10 +60,14 @@ router.post("/student", async (req, res) => {
   }
 });
 
-// Create New Student
+// Create New Super Admin
 router.post("/superadmin", async (req, res) => {
   try {
-    const superAdmin = await SuperAdmin.create(req.body);
+    const superAdmin = await SuperAdmin.create({
+      super_admin_name: "Super Admin",
+      super_admin_password: "superadmin",
+      super_admin_id: "123456"
+    });
     res.status(200).json(superAdmin);
   } catch (error) {
     console.log(error.message);
