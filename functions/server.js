@@ -113,7 +113,7 @@ router.post("/superadmin/login", async (req, res) => {
   }
 });
 
-router.get('/getSession', (req, res) => {
+router.get('/getuserid', (req, res) => {
   if (req.session.userId) {
     res.send(req.session.userId);
   } else {
