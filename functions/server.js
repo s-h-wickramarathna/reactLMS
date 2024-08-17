@@ -103,11 +103,15 @@ router.post("/superadmin/login", async (req, res) => {
 
     if (superAdmin.length > 0) {
       req.session.userId = superAdminId;
-      res.status(200).json({"message": "success"});
+
+      if (req.session.userId) {
+        res.status(200).json({ message: "success" });
+      }else{
+        res.status(200).json({ message: "session not set" });
+      }
 
     } else {
       res.status(404).json({ message: "Super Admin not found" });
-      
     }
   } catch (error) {
     console.error(error.message);
@@ -115,21 +119,21 @@ router.post("/superadmin/login", async (req, res) => {
   }
 });
 
-router.get('/getuserid', (req, res) => {
+router.get("/getuserid", (req, res) => {
   if (req.session.userId) {
     res.send(`${req.session.userId}`);
   } else {
-    res.status(401).send('Please log in');
+    res.status(401).send("Please log in");
   }
 });
 
 // Example route to destroy the session
-router.get('/logout', (req, res) => {
+router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
-      return res.status(500).send('Error logging out');
+      return res.status(500).send("Error logging out");
     }
-    res.send('User logged out and session destroyed');
+    res.send("User logged out and session destroyed");
   });
 });
 
