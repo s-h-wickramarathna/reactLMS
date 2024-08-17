@@ -105,7 +105,7 @@ router.post("/superadmin/login", async (req, res) => {
       req.session.userId = superAdminId;
 
       if (req.session.userId) {
-        res.status(200).json({ message: "success" });
+        res.status(200).json({ message: req.session.userId });
       }else{
         res.status(200).json({ message: "session not set" });
       }
