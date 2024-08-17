@@ -113,6 +113,16 @@ router.post("/superadmin/login", async (req, res) => {
   }
 });
 
+// Example route to destroy the session
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send('Error logging out');
+    }
+    res.send('User logged out and session destroyed');
+  });
+});
+
 // Fetch All Students
 router.get("/students", async (req, res) => {
   try {
