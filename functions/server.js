@@ -115,7 +115,7 @@ router.post("/superadmin/login", async (req, res) => {
 
 router.get('/getuserid', (req, res) => {
   if (req.session.userId) {
-    res.send(`Welcome, user ${req.session.userId}`);
+    res.send(`${req.session.userId}`);
   } else {
     res.status(401).send('Please log in');
   }
