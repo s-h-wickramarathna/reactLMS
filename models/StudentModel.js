@@ -4,13 +4,16 @@ const StudentSchema = mongoose.Schema(
   {
     sid: {
       type: Number,
+      required: true,
     },
     name: {
       type: String,
+      required: true,
       default: 0,
     },
     mobile: {
       type: Number,
+      required: true,
     },
   },
   {
