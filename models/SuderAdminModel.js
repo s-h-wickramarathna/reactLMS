@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
 const adminSchema = mongoose.Schema({
-  super_admin_id: {
+  superAdminId: {
     type: String,
     required: true,
   },
 
-  super_admin_password: {
+  superAdminPassword: {
     type: String,
     required: true,
   },
 
-  super_admin_name: {
+  superAdminName: {
     type: String,
     required: true,
   },
