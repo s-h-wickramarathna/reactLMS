@@ -113,6 +113,14 @@ router.post("/superadmin/login", async (req, res) => {
   }
 });
 
+router.get('/profile', (req, res) => {
+  if (req.session.userId) {
+    res.send(`Welcome, user ${req.session.userId}`);
+  } else {
+    res.status(401).send('Please log in');
+  }
+});
+
 // Example route to destroy the session
 router.get('/logout', (req, res) => {
   req.session.destroy((err) => {
