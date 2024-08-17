@@ -65,7 +65,7 @@ router.post("/superadmin", async (req, res) => {
   try {
     
     const { superAdminId, superAdminPassword, superAdminName }  = req.body;
-    res.status(200).json(superAdminId);
+    res.status(200).json({superAdminId,superAdminPassword,superAdminName});
     // const superAdmin = await SuperAdmin.create(req.body);
     // res.status(200).json(superAdmin);
   } catch (error) {
